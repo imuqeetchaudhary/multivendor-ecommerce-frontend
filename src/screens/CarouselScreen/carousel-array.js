@@ -1,6 +1,6 @@
-import img1 from './img/slide-img-1.jpg';
-import img2 from './img/slide-img-2.jpg';
-import img3 from './img/slide-img-3.jpg';
+import img1 from '../../assets/images/slide-img-1.jpg';
+import img2 from '../../assets/images/slide-img-2.jpg';
+import img3 from '../../assets/images/slide-img-3.jpg';
 
 const detail = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ecommerce.';
 

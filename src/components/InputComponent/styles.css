@@ -1,0 +1,19 @@
+.input {
+  width: 50%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin: 5px 40px;
+}
+
+.input-image {
+  width: 50%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin: 5px 40px;
+}
+
+.input:focus {
+  border: 2px solid #71d300;
+}

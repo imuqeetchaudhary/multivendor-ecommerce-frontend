@@ -1,0 +1,15 @@
+.register {
+  margin-top: 110px;
+  max-width: 50%;
+  background-color: #212529;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 40px;
+}
