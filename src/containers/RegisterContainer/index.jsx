@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import RegisterScreen from '../../screens/RegisterScreen';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useRegisterQuery } from '../../hooks/user/useRegisterQuery';
+import { useLoginQuery } from '../../hooks/user/useLoginQuery';
 
 const RegisterContainer = ({ setAuth }) => {
 	const navigate = useNavigate();
@@ -25,29 +27,44 @@ const RegisterContainer = ({ setAuth }) => {
 		setPassword(e.target.value);
 	};
 
+	const userObj = {
+		name,
+		email,
+		password,
+	};
+
+	const onRegisterSuccess = response => {
+		loginUser(userObj);
+		toast(`${response.data.message}`);
+	};
+
+	const onRegisterError = error => {
+		toast(`${error.response.data.message}`);
+		throw new Error(error);
+	};
+
+	const onLoginSuccess = response => {
+		const token = response.data.token;
+		localStorage.setItem('token', token);
+
+		setAuth(true);
+		navigate('/');
+	};
+
+	const onLoginError = error => {
+		throw new Error(error);
+	};
+
+	const { mutate: registerUser } = useRegisterQuery(
+		onRegisterSuccess,
+		onRegisterError
+	);
+
+	const { mutate: loginUser } = useLoginQuery(onLoginSuccess, onLoginError);
+
 	const handleSubmit = async e => {
 		e.preventDefault();
-
-		// const userObj = {
-		// 	name,
-		// 	email,
-		// 	password,
-		// };
-
-		try {
-			// const registerRes = await userRegister(userObj);
-
-			// const loginRes = await userLogin(userObj);
-
-			// const token = loginRes.data.token;
-			// localStorage.setItem('token', token);
-
-			setAuth(true);
-			// toast(`${registerRes.data.message}`);
-			navigate('/');
-		} catch (err) {
-			return toast(`${err.response.data.message}`);
-		}
+		registerUser(userObj);
 	};
 
 	return (
