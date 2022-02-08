@@ -12,7 +12,6 @@ export const useCreateProductQuery = () => {
 		},
 
 		onError: error => {
-			console.log(error.response);
 			toast(`${error.response.data.message}`);
 		},
 	});

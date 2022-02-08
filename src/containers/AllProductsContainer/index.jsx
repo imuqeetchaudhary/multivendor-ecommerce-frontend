@@ -2,14 +2,15 @@ import './styles.css';
 import React from 'react';
 import { CardGroup } from 'react-bootstrap';
 import ProductCard from '../../components/ProductCard';
-import { useGetAllProductsQuery } from '../../hooks/products';
+import { useGetAllProductsQuery, useDeleteProductQuery } from '../../hooks/products';
 
 const AllProductsContainer = () => {
 	const { data } = useGetAllProductsQuery();
+	const { mutate: deleteProduct } = useDeleteProductQuery();
 
 	const handleDeleteProduct = async (e, productId) => {
 		e.preventDefault();
-		console.log(productId);
+		deleteProduct(productId);
 	};
 
 	const handleCartChange = async (e, productId) => {
