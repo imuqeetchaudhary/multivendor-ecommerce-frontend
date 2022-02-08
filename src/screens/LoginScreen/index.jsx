@@ -32,7 +32,7 @@ const LoginScreen = ({
 					required={true}
 				/>
 				<br />
-				<ButtonComponent varient={'primary'} children={{ label: 'Submit' }} />
+				<ButtonComponent children={{ label: 'Submit' }} />
 			</form>
 		</div>
 	);

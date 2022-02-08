@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const ButtonComponent = ({ children, handleClick, varient }) => {
+const ButtonComponent = ({ children, handleClick, variant }) => {
 	return (
-		<Button variant={varient} type='submit' onClick={handleClick}>
+		<Button variant={variant} type='submit' onClick={handleClick}>
 			{children.label}
 		</Button>
 	);

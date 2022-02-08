@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import { useQueryClient } from 'react-query';
 import { useUpdateProductQuery } from '../../hooks/products/useUpdateProductQuery';
 import UpdateProductScreen from '../../screens/UpdateProductScreen';
 
-const UpdateProductContainer = ({ products, setProducts }) => {
+const UpdateProductContainer = () => {
+	const queryClient = useQueryClient();
+
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [price, setPrice] = useState(0);
 	const [productId, setProductId] = useState();
+
+	const queryData = queryClient.getQueryData('product');
+	let products = queryData.data.products;
 
 	const handleSelectChange = e => {
 		const id = +e.target.value;
@@ -20,26 +25,7 @@ const UpdateProductContainer = ({ products, setProducts }) => {
 		setPrice(products[foundIndex].price);
 	};
 
-	const onSuccess = _response => {
-		toast(`Successfully Updated Product`);
-
-		const newProducts = products.filter(product => {
-			if (product.productId === +productId) {
-				product.title = title ? title : product.title;
-				product.description = description ? description : product.description;
-				product.price = price ? price : product.price;
-			}
-			return product;
-		});
-
-		setProducts(newProducts);
-	};
-
-	const onError = _error => {
-		toast(`Error Occured while updating`);
-	};
-
-	const { mutate: updateProduct } = useUpdateProductQuery(onSuccess, onError);
+	const { mutate: updateProduct } = useUpdateProductQuery();
 
 	const handleSubmit = async e => {
 		e.preventDefault();
