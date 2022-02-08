@@ -4,7 +4,7 @@ import { request } from '../../utils/axios';
 const updateProduct = data => {
 	request({
 		url: `/product/${data.productId}`,
-		method: 'post',
+		method: 'patch',
 		data: data.productObj,
 	});
 };
