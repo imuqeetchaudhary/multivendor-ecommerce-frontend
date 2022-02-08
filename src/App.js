@@ -17,6 +17,7 @@ const queryClient = new QueryClient();
 
 function App() {
 	const [auth, setAuth] = useState(false);
+	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
 		const token = localStorage.getItem('token');
@@ -36,8 +37,24 @@ function App() {
 							element={<RegisterContainer setAuth={setAuth} />}
 						/>
 						<Route path='/login' element={<LoginContainer setAuth={setAuth} />} />
-						<Route path='/products/create' element={<CreateProductContainer />} />
-						<Route path='/products/update' element={<UpdateProductContainer />} />
+						<Route
+							path='/products/create'
+							element={
+								<CreateProductContainer
+									products={products}
+									setProducts={setProducts}
+								/>
+							}
+						/>
+						<Route
+							path='/products/update'
+							element={
+								<UpdateProductContainer
+									products={products}
+									setProducts={setProducts}
+								/>
+							}
+						/>
 					</Routes>
 				</Router>
 				<ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
