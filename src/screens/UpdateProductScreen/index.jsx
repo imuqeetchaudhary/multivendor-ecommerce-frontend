@@ -59,7 +59,7 @@ const UpdateProductScreen = ({
 					rewuired={false}
 				/>
 				<br />
-				<ButtonComponent children={{ label: 'Submit' }} />
+				<ButtonComponent varient={'primary'} children={{ label: 'Submit' }} />
 			</form>
 		</div>
 	);

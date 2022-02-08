@@ -43,7 +43,7 @@ const RegisterScreen = ({
 					required={true}
 				/>
 				<br />
-				<ButtonComponent children={{ label: 'Submit' }} />
+				<ButtonComponent varient={'primary'} children={{ label: 'Submit' }} />
 			</form>
 		</div>
 	);
