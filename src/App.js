@@ -13,6 +13,7 @@ import LoginContainer from './containers/LoginContainer';
 import CreateProductContainer from './containers/CreateProductContainer';
 import UpdateProductContainer from './containers/UpdateProductContainer';
 import AllProductsContainer from './containers/AllProductsContainer';
+import CartProductsContainer from './containers/CartProductsContainer';
 
 const queryClient = new QueryClient();
 
@@ -37,9 +38,10 @@ function App() {
 							element={<RegisterContainer setAuth={setAuth} />}
 						/>
 						<Route path='/login' element={<LoginContainer setAuth={setAuth} />} />
+						<Route path='/products' element={<AllProductsContainer />} />
 						<Route path='/products/create' element={<CreateProductContainer />} />
 						<Route path='/products/update' element={<UpdateProductContainer />} />
-						<Route path='/products' element={<AllProductsContainer />} />
+						<Route path='/cart' element={<CartProductsContainer />} />
 					</Routes>
 				</Router>
 				<ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
