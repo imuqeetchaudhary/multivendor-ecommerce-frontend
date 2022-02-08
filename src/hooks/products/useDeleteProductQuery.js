@@ -15,7 +15,6 @@ export const useDeleteProductQuery = () => {
 		},
 
 		onError: error => {
-			console.log(error.response);
 			toast(`${error.response.data.message}`);
 		},
 	});
