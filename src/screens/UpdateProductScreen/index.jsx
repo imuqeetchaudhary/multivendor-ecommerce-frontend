@@ -25,16 +25,11 @@ const UpdateProductScreen = ({
 				onChange={handleSelectChange}
 			>
 				Select a product
-				<option>Product 1</option>
-				<option>Product 2</option>
-				<option>Product 3</option>
-				<option>Product 4</option>
-				<option>Product 5</option>
-				{/* {products.map(product => (
-					<option key={product._id} value={product._id}>
+				{products.map(product => (
+					<option key={product.productId} value={product.productId}>
 						{product.title}
 					</option>
-				))} */}
+				))}
 			</select>
 			<form onSubmit={handleSubmit}>
 				<InputComponent
