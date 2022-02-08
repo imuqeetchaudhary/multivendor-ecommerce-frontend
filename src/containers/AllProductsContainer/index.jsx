@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard';
 import { useGetAllProductsQuery } from '../../hooks/products/useGetAllProductsQuery';
 
 const AllProductsContainer = () => {
-	const { data, refetch } = useGetAllProductsQuery();
+	const { data } = useGetAllProductsQuery();
 
 	const handleDeleteProduct = async (e, productId) => {
 		e.preventDefault();
@@ -16,10 +16,6 @@ const AllProductsContainer = () => {
 		e.preventDefault();
 		console.log(productId);
 	};
-
-	React.useEffect(() => {
-		refetch();
-	}, [refetch]);
 
 	return (
 		<div>

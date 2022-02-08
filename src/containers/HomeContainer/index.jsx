@@ -1,13 +1,12 @@
 import React from 'react';
 import HomeScreen from '../../screens/HomeScreen';
-import { useGetAllProductsQuery } from '../../hooks/products/useGetAllProductsQuery';
+import AllProductsContainer from '../AllProductsContainer';
 
 const HomeContainer = () => {
-	useGetAllProductsQuery();
-
 	return (
 		<div>
 			<HomeScreen />
+			<AllProductsContainer />
 		</div>
 	);
 };

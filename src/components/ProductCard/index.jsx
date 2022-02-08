@@ -2,6 +2,7 @@ import './styles.css';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import ButtonComponent from '../ButtonComponent';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({
 	image,
@@ -46,11 +47,20 @@ const ProductCard = ({
 					{localStorage.getItem('token') ? (
 						<>
 							{children.route === '/products' && (
-								<ButtonComponent
-									handleClick={e => handleDeleteProduct(e, children.id)}
-									children={{ label: 'Delete Product' }}
-								/>
+								<>
+									<Card.Text>
+										<Link to='/products/update'>
+											<ButtonComponent children={{ label: 'Edit Product' }} />
+										</Link>
+									</Card.Text>
+									{'	'}
+									<ButtonComponent
+										handleClick={e => handleDeleteProduct(e, children.id)}
+										children={{ label: 'Delete Product' }}
+									/>
+								</>
 							)}
+							{'	'}
 							<ButtonComponent
 								handleClick={e => handleCartChange(e, children.id)}
 								children={{ label: children.button }}
