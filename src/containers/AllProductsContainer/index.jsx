@@ -2,7 +2,7 @@ import './styles.css';
 import React from 'react';
 import { CardGroup } from 'react-bootstrap';
 import ProductCard from '../../components/ProductCard';
-import { useGetAllProductsQuery } from '../../hooks/products/useGetAllProductsQuery';
+import { useGetAllProductsQuery } from '../../hooks/products';
 
 const AllProductsContainer = () => {
 	const { data } = useGetAllProductsQuery();

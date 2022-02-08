@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LoginScreen from '../../screens/LoginScreen';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { useLoginQuery } from '../../hooks/user/useLoginQuery';
+import { useLoginQuery } from '../../hooks/user';
 
 const LoginContainer = ({ setAuth }) => {
 	const navigate = useNavigate();

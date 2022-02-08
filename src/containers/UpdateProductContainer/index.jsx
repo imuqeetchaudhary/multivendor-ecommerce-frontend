@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQueryClient } from 'react-query';
-import { useUpdateProductQuery } from '../../hooks/products/useUpdateProductQuery';
+import { useUpdateProductQuery } from '../../hooks/products';
 import UpdateProductScreen from '../../screens/UpdateProductScreen';
 
 const UpdateProductContainer = () => {

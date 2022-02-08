@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CreateProductScreen from '../../screens/CreateProductContainer';
-import { useCreateProductQuery } from '../../hooks/products/useCreateProductQuery';
+import { useCreateProductQuery } from '../../hooks/products';
 
 const CreateProductContainer = () => {
 	const [title, setTitle] = useState('');

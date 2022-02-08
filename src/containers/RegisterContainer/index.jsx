@@ -3,7 +3,7 @@ import RegisterScreen from '../../screens/RegisterScreen';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useRegisterQuery } from '../../hooks/user/useRegisterQuery';
-import { useLoginQuery } from '../../hooks/user/useLoginQuery';
+import { useLoginQuery } from '../../hooks/user';
 
 const RegisterContainer = ({ setAuth }) => {
 	const navigate = useNavigate();
