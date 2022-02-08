@@ -22,6 +22,7 @@ const RegisterScreen = ({
 					value={name}
 					className={'input'}
 					handleChange={handleNameChange}
+					required={true}
 				/>
 				<br />
 				<InputComponent
@@ -30,6 +31,7 @@ const RegisterScreen = ({
 					value={email}
 					className={'input'}
 					handleChange={handleEmailChange}
+					required={true}
 				/>
 				<br />
 				<InputComponent
@@ -38,6 +40,7 @@ const RegisterScreen = ({
 					value={password}
 					className={'input'}
 					handleChange={handlePasswordChange}
+					required={true}
 				/>
 				<br />
 				<ButtonComponent children={{ label: 'Submit' }} />

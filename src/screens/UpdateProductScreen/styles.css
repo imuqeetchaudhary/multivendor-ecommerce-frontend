@@ -1,0 +1,27 @@
+.update-product-screen {
+	margin-top: 95px;
+	max-width: 50%;
+	background-color: #212529;
+	color: #ffffff;
+	padding: 40px;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.heading {
+	margin-bottom: 40px;
+}
+
+.select {
+	width: 50%;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	margin: 5px 40px;
+}
+
+.select:focus {
+	border: 2px solid #71d300;
+}

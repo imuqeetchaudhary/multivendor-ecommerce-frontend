@@ -10,6 +10,8 @@ import NavbarComponent from './components/NavbarComponent';
 import HomeContainer from './containers/HomeContainer';
 import RegisterContainer from './containers/RegisterContainer';
 import LoginContainer from './containers/LoginContainer';
+import CreateProductContainer from './containers/CreateProductContainer';
+import UpdateProductContainer from './containers/UpdateProductContainer';
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ function App() {
 							element={<RegisterContainer setAuth={setAuth} />}
 						/>
 						<Route path='/login' element={<LoginContainer setAuth={setAuth} />} />
+						<Route path='/products/create' element={<CreateProductContainer />} />
+						<Route path='/products/update' element={<UpdateProductContainer />} />
 					</Routes>
 				</Router>
 				<ReactQueryDevtools initialIsOpen={false} position='bottom-right' />

@@ -20,6 +20,7 @@ const LoginScreen = ({
 					value={email}
 					className={'input'}
 					handleChange={handleEmailChange}
+					required={true}
 				/>
 				<br />
 				<InputComponent
@@ -28,6 +29,7 @@ const LoginScreen = ({
 					value={password}
 					className={'input'}
 					handleChange={handlePasswordChange}
+					required={true}
 				/>
 				<br />
 				<ButtonComponent children={{ label: 'Submit' }} />
