@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation } from 'react-query';
 import { request } from '../../utils/axios';
 import { toast } from 'react-toastify';
 
@@ -11,11 +11,8 @@ const updateProduct = data => {
 };
 
 export const useUpdateProductQuery = () => {
-	const queryClient = useQueryClient();
-
 	return useMutation(data => updateProduct(data), {
 		onSuccess: () => {
-			queryClient.invalidateQueries('product');
 			toast(`Successfully Updated Product`);
 		},
 		onError: () => {

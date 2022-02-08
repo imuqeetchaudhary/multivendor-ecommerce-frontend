@@ -11,7 +11,7 @@ const UpdateProductContainer = () => {
 	const [price, setPrice] = useState(0);
 	const [productId, setProductId] = useState();
 
-	const queryData = queryClient.getQueryData('product');
+	const queryData = queryClient.getQueryData('all_products');
 	let products = queryData.data.products;
 
 	const handleSelectChange = e => {

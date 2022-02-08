@@ -4,5 +4,5 @@ import { request } from '../../utils/axios';
 const getAllProducts = () => request({ url: '/product', method: 'get' });
 
 export const useGetAllProductsQuery = () => {
-	return useQuery('product', getAllProducts);
+	return useQuery('all_products', getAllProducts);
 };
