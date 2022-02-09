@@ -1,3 +1,14 @@
 .card-group {
 	margin: 110px 50px 50px;
 }
+
+.total-cart-price {
+	position: fixed;
+	width: 100%;
+	top: 60px;
+	z-index: 1;
+	background-color: #212529;
+	color: #ffffff;
+	display: block;
+	padding: 0 0 10px;
+}
