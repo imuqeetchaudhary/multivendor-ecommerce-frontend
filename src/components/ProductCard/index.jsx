@@ -31,7 +31,7 @@ const ProductCard = ({
 								handleClick={e =>
 									handleDecrementCartProductQuantityChange(e, children.id)
 								}
-								children={{ label: '+' }}
+								children={{ label: '-' }}
 							/>
 
 							{`         ${children.quantity} ${no}         `}
