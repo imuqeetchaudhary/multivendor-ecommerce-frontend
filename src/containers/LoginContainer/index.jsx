@@ -23,7 +23,7 @@ const LoginContainer = ({ setAuth }) => {
 	const onLoginSuccess = response => {
 		const isAdmin = response.data.user.isAdmin;
 		const token = response.data.token;
-		localStorage.setItem('isAdmin', isAdmin);
+		isAdmin && localStorage.setItem('isAdmin', isAdmin);
 		localStorage.setItem('token', token);
 
 		toast(`Successfully Logged In`);

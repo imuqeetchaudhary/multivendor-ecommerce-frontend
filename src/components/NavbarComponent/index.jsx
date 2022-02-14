@@ -19,6 +19,26 @@ const NavbarComp = ({ auth }) => {
 								<Link to='/'>Home</Link>
 								<Link to='/products'>Products</Link>
 							</>
+						) : localStorage.getItem('isAdmin') ? (
+							<>
+								<Link to='/'>Home</Link>
+								<Link to='/products'>Products</Link>
+								<Link to='/products/create'>Create Product</Link>
+								<Link to='/cart'>Cart</Link>
+								<Link to='/sales/mine'>My Sales</Link>
+								<Link to='/sales/all'>All Sales</Link>
+								<Link to='/purchases/mine'>My Purchases</Link>
+								<Link
+									to='/login'
+									onClick={() => {
+										localStorage.removeItem('token');
+										localStorage.removeItem('isAdmin');
+										window.location.href = 'http://localhost:3000/login';
+									}}
+								>
+									Logout
+								</Link>
+							</>
 						) : (
 							<>
 								<Link to='/'>Home</Link>
@@ -31,6 +51,7 @@ const NavbarComp = ({ auth }) => {
 									to='/login'
 									onClick={() => {
 										localStorage.removeItem('token');
+										localStorage.removeItem('isAdmin');
 										window.location.href = 'http://localhost:3000/login';
 									}}
 								>
