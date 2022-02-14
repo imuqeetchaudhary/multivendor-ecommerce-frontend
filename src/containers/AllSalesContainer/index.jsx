@@ -3,7 +3,7 @@ import SaleCard from '../../components/SaleCard';
 import { CardGroup } from 'react-bootstrap';
 import { useGetAllSellerSaleQuery } from '../../hooks/sale/useGetAllSellerSaleQuery';
 
-const AllSellersSalesContainer = () => {
+const AllSalesContainer = () => {
 	const { data } = useGetAllSellerSaleQuery();
 
 	const getSingleSale = (e, saleId) => {
@@ -31,4 +31,4 @@ const AllSellersSalesContainer = () => {
 	);
 };
 
-export default AllSellersSalesContainer;
+export default AllSalesContainer;
