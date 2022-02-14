@@ -25,6 +25,7 @@ const NavbarComp = ({ auth }) => {
 								<Link to='/products'>Products</Link>
 								<Link to='/products/create'>Create Product</Link>
 								<Link to='/cart'>Cart</Link>
+								<Link to='/sales/mine'>My Sales</Link>
 								<Link
 									to='/login'
 									onClick={() => {

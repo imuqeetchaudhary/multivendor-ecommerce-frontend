@@ -14,6 +14,7 @@ import CreateProductContainer from './containers/CreateProductContainer';
 import UpdateProductContainer from './containers/UpdateProductContainer';
 import AllProductsContainer from './containers/AllProductsContainer';
 import CartProductsContainer from './containers/CartProductsContainer';
+import AllSellersSalesContainer from './containers/AllSellersSalesContainer';
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ function App() {
 						<Route path='/products/create' element={<CreateProductContainer />} />
 						<Route path='/products/update' element={<UpdateProductContainer />} />
 						<Route path='/cart' element={<CartProductsContainer />} />
+						<Route path='/sales/mine' element={<AllSellersSalesContainer />} />
 					</Routes>
 				</Router>
 				<ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
