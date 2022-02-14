@@ -6,10 +6,6 @@ import { useGetAllSellerSaleQuery } from '../../hooks/sale/useGetAllSellerSaleQu
 const AllSalesContainer = () => {
 	const { data } = useGetAllSellerSaleQuery();
 
-	const getSingleSale = (e, saleId) => {
-		e.preventDefault();
-		console.log('SaleId: ', saleId);
-	};
 	return (
 		<div>
 			<CardGroup className='sale-card-group'>
@@ -23,7 +19,8 @@ const AllSalesContainer = () => {
 						sellerName={sale.Seller.name}
 						saleQuantity={sale.productQuantity}
 						totalSalePrice={sale.totalPrice}
-						getSingleSale={getSingleSale}
+						productPrice={sale.Product.price}
+						productDescription={sale.Product.description}
 					/>
 				))}
 			</CardGroup>
