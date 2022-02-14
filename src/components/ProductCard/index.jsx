@@ -13,6 +13,7 @@ const ProductCard = ({
 	children,
 	handleCartChange,
 	handleDeleteProduct,
+	handleCreateNewSale,
 	handleIncrementCartProductQuantityChange,
 	handleDecrementCartProductQuantityChange,
 }) => {
@@ -62,8 +63,12 @@ const ProductCard = ({
 							)}
 							{'	'}
 							<ButtonComponent
+								handleClick={e => handleCreateNewSale(e, children.id)}
+								children={{ label: children.saleButton }}
+							/>
+							<ButtonComponent
 								handleClick={e => handleCartChange(e, children.id)}
-								children={{ label: children.button }}
+								children={{ label: children.removeButton }}
 							/>
 						</>
 					) : (

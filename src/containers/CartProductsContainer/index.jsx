@@ -7,12 +7,14 @@ import {
 	useDeleteCartProductQuery,
 	useUpdateCartProductQuery,
 } from '../../hooks/cart';
+import { useCreateNewSaleQuery } from '../../hooks/sale';
 import { toast } from 'react-toastify';
 
 const AllProductsContainer = () => {
 	const { data } = useGetAllCartProductsQuery();
 	const { mutate: deleteCartProduct } = useDeleteCartProductQuery();
 	const { mutate: updateCartProduct } = useUpdateCartProductQuery();
+	const { mutate: createNewSale } = useCreateNewSaleQuery();
 
 	const totalCartProductsPrice = data?.data?.cart.reduce(
 		(accumulator, nextProduct) => {
@@ -68,6 +70,12 @@ const AllProductsContainer = () => {
 		}
 	};
 
+	const handleCreateNewSale = (e, cartId) => {
+		e.preventDefault();
+		createNewSale(cartId);
+		deleteCartProduct(cartId);
+	};
+
 	return (
 		<div>
 			<h4 className='total-cart-price'>
@@ -84,7 +92,8 @@ const AllProductsContainer = () => {
 						no={cart.quantity}
 						handleCartChange={handleDeleteCartChange}
 						children={{
-							button: 'Remove From Cart',
+							removeButton: 'Remove From Cart',
+							saleButton: 'Convert To Sale',
 							quantity: 'quantity',
 							cart: true,
 							id: cart.cartId,
@@ -95,6 +104,7 @@ const AllProductsContainer = () => {
 						handleDecrementCartProductQuantityChange={
 							handleDecrementCartProductQuantityChange
 						}
+						handleCreateNewSale={handleCreateNewSale}
 					/>
 				))}
 			</CardGroup>
