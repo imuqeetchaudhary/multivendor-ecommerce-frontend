@@ -92,7 +92,7 @@ const AllProductsContainer = () => {
 						no={cart.quantity}
 						handleCartChange={handleDeleteCartChange}
 						children={{
-							removeButton: 'Remove From Cart',
+							button: 'Remove From Cart',
 							saleButton: 'Convert To Sale',
 							quantity: 'quantity',
 							cart: true,

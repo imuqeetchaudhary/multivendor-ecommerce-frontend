@@ -62,13 +62,15 @@ const ProductCard = ({
 								</>
 							)}
 							{'	'}
-							<ButtonComponent
-								handleClick={e => handleCreateNewSale(e, children.id)}
-								children={{ label: children.saleButton }}
-							/>
+							{children.cart && (
+								<ButtonComponent
+									handleClick={e => handleCreateNewSale(e, children.id)}
+									children={{ label: children.saleButton }}
+								/>
+							)}
 							<ButtonComponent
 								handleClick={e => handleCartChange(e, children.id)}
-								children={{ label: children.removeButton }}
+								children={{ label: children.button }}
 							/>
 						</>
 					) : (
