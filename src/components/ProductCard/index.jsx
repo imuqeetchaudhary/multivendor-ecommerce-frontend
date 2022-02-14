@@ -3,6 +3,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import ButtonComponent from '../ButtonComponent';
 import { Link } from 'react-router-dom';
+import { useTotalQuantityOfProductSoldQuery } from '../../hooks/sale';
 
 const ProductCard = ({
 	image,
@@ -17,6 +18,9 @@ const ProductCard = ({
 	handleIncrementCartProductQuantityChange,
 	handleDecrementCartProductQuantityChange,
 }) => {
+	const productId = children.id;
+	const { data } = useTotalQuantityOfProductSoldQuery(productId);
+
 	return (
 		<div className='single-card'>
 			<Card border='primary'>
@@ -25,6 +29,12 @@ const ProductCard = ({
 					<Card.Title>{title}</Card.Title>
 					<Card.Text>{detail}</Card.Text>
 					<Card.Text>$ {price}</Card.Text>
+					{!children.cart && (
+						<Card.Text>
+							This product is sold out {data?.data.totalNumberOfQuantitySold || 0}
+							times
+						</Card.Text>
+					)}
 					{children.cart && (
 						<Card.Text>
 							<ButtonComponent
