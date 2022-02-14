@@ -6,9 +6,9 @@ import { useGetAllPurchasesQuery } from '../../hooks/sale';
 const AllPurchasesContainer = () => {
 	const { data } = useGetAllPurchasesQuery();
 
-	const getSinglePurchase = (e, purchaseId) => {
+	const getSingleSale = (e, saleId) => {
 		e.preventDefault();
-		console.log('PurchaseId: ', purchaseId);
+		console.log('SaleId: ', saleId);
 	};
 	return (
 		<div>
@@ -23,7 +23,7 @@ const AllPurchasesContainer = () => {
 						sellerName={sale.Seller.name}
 						saleQuantity={sale.productQuantity}
 						totalSalePrice={sale.totalPrice}
-						getSingleSale={getSinglePurchase}
+						getSingleSale={getSingleSale}
 					/>
 				))}
 			</CardGroup>
