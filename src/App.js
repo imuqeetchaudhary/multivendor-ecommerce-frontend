@@ -18,6 +18,7 @@ import AllSalesContainer from './containers/AllSalesContainer';
 import AllPurchasesContainer from './containers/AllPurchasesContainer';
 import AllSalesForAdminContainer from './containers/AllSalesForAdminContainer';
 import SaleGraphContainer from './containers/SaleGraphContainer.js';
+import PurchaseGraphContainer from './containers/PurchaseGraphContainer';
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,10 @@ function App() {
 						<Route path='/purchases/mine' element={<AllPurchasesContainer />} />
 						<Route path='/sales/all' element={<AllSalesForAdminContainer />} />
 						<Route path='/products/sale-graph' element={<SaleGraphContainer />} />
+						<Route
+							path='/products/purchase-graph'
+							element={<PurchaseGraphContainer />}
+						/>{' '}
 					</Routes>
 				</Router>
 				<ReactQueryDevtools initialIsOpen={false} position='bottom-right' />

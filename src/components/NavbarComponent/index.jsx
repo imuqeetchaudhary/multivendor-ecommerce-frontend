@@ -39,6 +39,7 @@ const NavbarComp = ({ auth }) => {
 										<Link to='/sales/mine'>My Sales</Link>
 										<Link to='/sales/all'>All Sales</Link>
 										<Link to='/products/sale-graph'>Sales Graph</Link>
+										<Link to='/products/purchase-graph'>Purchases Graph</Link>
 										<Link to='/purchases/mine'>My Purchases</Link>
 										<Link
 											to='/login'
@@ -72,56 +73,6 @@ const NavbarComp = ({ auth }) => {
 									</>
 								)}
 							</Nav>
-							{/* <Nav className='nav-links'>
-								{!auth ? (
-									<>
-										<Link to='/register'>Register</Link>
-										<Link to='/login'>Login</Link>
-										<Link to='/'>Home</Link>
-										<Link to='/products'>Products</Link>
-									</>
-								) : localStorage.getItem('isAdmin') ? (
-									<>
-										<Link to='/'>Home</Link>
-										<Link to='/products'>Products</Link>
-										<Link to='/products/create'>Create Product</Link>
-										<Link to='/cart'>Cart</Link>
-										<Link to='/sales/mine'>My Sales</Link>
-										<Link to='/sales/all'>All Sales</Link>
-										<Link to='/products/sale-graph'>Sales Graph</Link>
-										<Link to='/purchases/mine'>My Purchases</Link>
-										<Link
-											to='/login'
-											onClick={() => {
-												localStorage.removeItem('token');
-												localStorage.removeItem('isAdmin');
-												window.location.href = 'http://localhost:3000/login';
-											}}
-										>
-											Logout
-										</Link>
-									</>
-								) : (
-									<>
-										<Link to='/'>Home</Link>
-										<Link to='/products'>Products</Link>
-										<Link to='/products/create'>Create Product</Link>
-										<Link to='/cart'>Cart</Link>
-										<Link to='/sales/mine'>My Sales</Link>
-										<Link to='/purchases/mine'>My Purchases</Link>
-										<Link
-											to='/login'
-											onClick={() => {
-												localStorage.removeItem('token');
-												localStorage.removeItem('isAdmin');
-												window.location.href = 'http://localhost:3000/login';
-											}}
-										>
-											Logout
-										</Link>
-									</>
-								)}
-							</Nav> */}
 						</Offcanvas.Body>
 					</Navbar.Offcanvas>
 				</Container>
