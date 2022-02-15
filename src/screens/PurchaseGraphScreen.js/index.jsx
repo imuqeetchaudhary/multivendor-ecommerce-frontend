@@ -11,7 +11,7 @@ const PurchaseGraphScreen = ({ users, handleSelectChange, purchaseHistory }) => 
 	return (
 		<>
 			<h3 className='total-purchase-price'>
-				Total amount of purchase done by this user this now is {totalPurchaseAmount}
+				Total amount of purchase done by this user till now is {totalPurchaseAmount}
 			</h3>
 			<div className='purchase-graph-screen'>
 				<select className='select-buyer' onChange={handleSelectChange}>
