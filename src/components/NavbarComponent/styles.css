@@ -1,12 +1,27 @@
-.nav-brand a,
-.nav-links a {
+.nav-brand a {
 	color: white;
 	text-decoration: none;
 	padding: 10px;
 	font-size: 1.1em;
 }
 
-.nav-links a:hover {
+.nav-brand a:hover {
 	color: white;
 	text-decoration: underline;
+}
+
+.nav-links a {
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+	font-size: 1.1em;
+}
+
+.nav-links a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.nav-offcanvas {
+	max-width: 20%;
 }
