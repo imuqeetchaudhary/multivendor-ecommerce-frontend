@@ -25,7 +25,7 @@ const UpdateProductScreen = ({
 				onChange={handleSelectChange}
 			>
 				Select a product
-				{products.map(product => (
+				{products?.map(product => (
 					<option key={product.productId} value={product.productId}>
 						{product.title}
 					</option>

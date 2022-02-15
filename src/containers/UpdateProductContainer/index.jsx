@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import { useQueryClient } from 'react-query';
 import { useUpdateProductQuery } from '../../hooks/products';
+import { useGetOwnerAllProductsQuery } from '../../hooks/products';
 import UpdateProductScreen from '../../screens/UpdateProductScreen';
 
 const UpdateProductContainer = () => {
-	const queryClient = useQueryClient();
-
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [price, setPrice] = useState(0);
 	const [productId, setProductId] = useState();
 
-	const queryData = queryClient.getQueryData('all_products');
-	let products = queryData.data.products;
+	const { data: productsData } = useGetOwnerAllProductsQuery();
+	let products = productsData?.data?.products;
 
 	const handleSelectChange = e => {
 		const id = +e.target.value;
 		setProductId(id);
 
-		const foundIndex = products.findIndex(product => product.productId === id);
+		const foundIndex = productsData?.data?.products.findIndex(
+			product => product?.productId === id
+		);
 
-		setTitle(products[foundIndex].title);
-		setDescription(products[foundIndex].description);
-		setPrice(products[foundIndex].price);
+		setTitle(products[foundIndex]?.title);
+		setDescription(products[foundIndex]?.description);
+		setPrice(products[foundIndex]?.price);
 	};
 
 	const { mutate: updateProduct } = useUpdateProductQuery();
@@ -50,7 +50,7 @@ const UpdateProductContainer = () => {
 				price={price}
 				setPrice={setPrice}
 				handleSubmit={handleSubmit}
-				products={products}
+				products={productsData?.data?.products}
 				productId={productId}
 				handleSelectChange={handleSelectChange}
 			/>

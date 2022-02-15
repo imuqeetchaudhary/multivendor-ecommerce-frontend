@@ -3,6 +3,7 @@ import { useCreateProductQuery } from './useCreateProductQuery';
 import { useUpdateProductQuery } from './useUpdateProductQuery';
 import { useDeleteProductQuery } from './useDeleteProductQuery';
 import { useGetAllProductsGraphQuery } from './useGetProductsSaleGraphQuery';
+import { useGetOwnerAllProductsQuery } from './useGetOwnerAllProductsQuery';
 
 export {
 	useGetAllProductsQuery,
@@ -10,4 +11,5 @@ export {
 	useUpdateProductQuery,
 	useDeleteProductQuery,
 	useGetAllProductsGraphQuery,
+	useGetOwnerAllProductsQuery,
 };
