@@ -6,7 +6,7 @@ import { Bar } from 'react-chartjs-2';
 const SaleGraphScreen = ({ users, handleSelectChange, productsGraph }) => {
 	return (
 		<div className='sale-graph-screen'>
-			<select className='select' onChange={handleSelectChange}>
+			<select className='select-seller' onChange={handleSelectChange}>
 				Select a Seller
 				{users?.map(user => (
 					<option key={user.userId} value={user.userId}>

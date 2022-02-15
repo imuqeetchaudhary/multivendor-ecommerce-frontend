@@ -7,15 +7,26 @@
 	margin-top: 40px;
 }
 
-.select {
+.select-buyer {
 	width: 15%;
 	border-radius: 5px;
 	outline: auto;
 	outline-color: #212529;
 	border: none;
-	margin: 5px 0 20px;
+	margin: 30px 0 20px;
 }
 
-.select:focus {
+.select-buyer:focus {
 	border: 2px solid #71d300;
+}
+
+.total-purchase-price {
+	position: fixed;
+	width: 100%;
+	top: 58px;
+	z-index: 1;
+	background-color: #212529;
+	color: #ffffff;
+	display: block;
+	padding: 0 0 10px;
 }

@@ -7,7 +7,7 @@
 	margin-top: 40px;
 }
 
-.select {
+.select-seller {
 	width: 15%;
 	border-radius: 5px;
 	outline: auto;
@@ -16,6 +16,6 @@
 	margin: 5px 0 20px;
 }
 
-.select:focus {
+.select-seller:focus {
 	border: 2px solid #71d300;
 }
